@@ -1,0 +1,9 @@
+<?php
+$post_data = file_get_contents('php://input');
+$ischeri="###ISCHERI###";
+if ($post_data != ""){
+$sock = stream_socket_client('unix://localsocket_###ISCHERI###.socket');
+fwrite($sock, $post_data);
+}
+?>
+
